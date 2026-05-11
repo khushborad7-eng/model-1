@@ -1,1 +1,48 @@
 
+<h1>Registration Form</h1><br>
+<form action="#" method="post" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+    
+    <label for="enrollment">Enrollment No:</label>
+    <input type="text" id="enrollment" name="enrollment" maxlength="12" placeholder="Enter enrollment number" required><br><br>
+    
+    <label for="branch">Branch:</label>
+    <select id="branch" name="branch" required>
+      <option value="">--Select Branch--</option>
+      <option value="CSE">Computer Science & Engineering</option>
+      <option value="IT">Information Technology</option>
+      <option value="ME">Mechanical Engineering</option>
+      <option value="EC">Electronics & Communication</option>
+      <option value="EE">Electrical Engineering</option>
+    </select><br><br>
+    
+    <label for="division">Division:</label>
+    <input type="text" id="division" name="division" maxlength="1"  title="Single digit or letter" placeholder="A, B, 1, 2 etc." required><br><br>
+    
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label>
+    <br><br>
+    
+    <label for="mobile">Mobile Number:</label>
+    <input type="tel" id="mobile" name="mobile"  maxlength="10" title="Enter 10 digit mobile number" placeholder="9876543210" required><br><br>
+    
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" name="email" placeholder="example@email.com" required><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter password" required><br><br>
+    
+    <label for="photo">Photo Upload:</label>
+    <input type="file" id="photo" name="photo" accept="image/*" required><br><br>
+    
+    <label for="remarks">Remarks:</label>
+    <textarea id="remarks" name="remarks" rows="3" cols="30" placeholder="Any additional remarks"></textarea><br><br>
+    
+    <input type="button" value="Submit">
+</form>
