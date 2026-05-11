@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OJT</title>
+</head>
+<body>
+<table border="1" cellpadding="5" cellspacing="0">
+    
+    <tr>
+        <th colspan="8" style="position: relative; height: 60px;">
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <img src="C:/Users/khush/OneDrive/Pictures/Screenshots/sil.png" style="height:50px; margin-right: 16px; margin-left: 0; display: block;">
+                <span style="flex: 1; text-align: center; font-size: 2em; font-weight: bold;">
+                    Silver oak university
+                </span>
+            </div>
+        </th>
 
+    </tr>
+ 
+    <tr>
+        <th colspan="2">Student Name:</th>
+        <td colspan="6">Khush Borad</td>
+    </tr>
+ 
+    <tr>
+        <th>Enrollment No:</th>
+        <td>2501031830032</th>
+        <th>Seat Number:</th>
+        <td colspan="5">2501031830032</td>
+        
+    </tr>
+    <tr>
+        <th>Course Code</th>
+        <th>Course Name</th>
+        <th>CIE</th>
+        <th>ESE</th>
+        <th>CIE</th>
+        <th>ESE</th>
+        <th>Total Marks</th>
+        <th>Obtained Marks</th>
+    </tr>
+    <tr>
+        <td>MA101</td>
+        <td>Mathematics</td>
+        <td>20</td>
+        <td>30</td>
+        <td>25</td>
+        <td>45</td>
+        <td>120</td>
+        <td>110</td>
+    </tr>
+    <tr>
+        <td>SC102</td>
+        <td>Science</td>
+        <td>19</td>
+        <td>29</td>
+        <td>24</td>
+        <td>44</td>
+        <td>116</td>
+        <td>102</td>
+    </tr>
+    <tr>
+        <td>EN103</td>
+        <td>English</td>
+        <td>18</td>
+        <td>28</td>
+        <td>23</td>
+        <td>43</td>
+        <td>112</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>CS104</td>
+        <td>Computer Science</td>
+        <td>22</td>
+        <td>32</td>
+        <td>27</td>
+        <td>47</td>
+        <td>128</td>
+        <td>120</td>
+    </tr>
+    <tr>
+        <th colspan="6">Total Marks:</th>
+        <td colspan="1">476</td>
+        <td colspan="1">431</td>
+    </tr>
+    <tr>
+        <th colspan="2">Percentage:</td>
+        <td colspan="2">90.7%</td>
+        <th colspan="2">CGPA:</td>
+        <td colspan="2">9.1</td>
+        
+    </tr>
+    <tr>
+        <td colspan="8" style="text-align:center;font-weight:bold;">All The Best</td>
+    </tr>
+</table>
+<br><br>
+</body>
+</html>
