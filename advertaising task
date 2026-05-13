@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spoken English Advertisement</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+    body{
+      background: linear-gradient(132deg,#a8edea 0%, #fed6e3 100%);
+      min-height:100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      animation: rainbowBG 12s linear infinite alternate;
+    }
+
+    @keyframes rainbowBG {
+      0% { filter: hue-rotate(0deg);}
+      100% { filter: hue-rotate(60deg);}
+    }
+
+    .ad-container{
+      position:relative;
+      width: 98vw;
+      max-width: 880px;
+      margin: 42px auto;
+      padding:28px 18px 28px 18px;
+      border-radius:32px;
+      box-shadow: 0 14px 48px 0 rgba(60,40,60,.16), 0 1.2px 6px rgba(80,30,150,0.11);
+      background: rgba(255,255,255,0.99);
+      overflow:hidden;
+      z-index:3;
+      border:2.5px solid #ec4317cc;
+      animation: ad-pop .9s cubic-bezier(.8, -.1, .71, 1.22);
+    }
+    @keyframes ad-pop {
+      0% {transform: scale(.85);}
+      80% {transform: scale(1.07);}
+      100% {transform: scale(1);}
+    }
+
+    .advert-line{
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #e36519;
+      background: linear-gradient(93deg, #ffe76f 50%,#fff9de 90%);
+      text-align: center;
+      border-radius: 10px;
+      padding: 11px 0;
+      margin-bottom: 18px;
+      box-shadow:0 2px 18px 0 #ffe37255;
+      border: 2.5px dashed #fde56d;
+      animation: fadeInUp 1.1s, slideWave 4.2s infinite alternate ease-in-out;
+    }
+    @keyframes slideWave {
+      0% {transform: translateX(-6px);}
+      100% {transform: translateX(9px);}
+    }
+    .poster-slider{
+      width:100%;
+      margin-bottom:38px;
+      border-radius:24px;
+      box-shadow:0 7px 21px rgba(20,9,41,0.15);
+      overflow:hidden;
+      position:relative;
+      background:#e7fff5;
+      /* Neumorphism effect: */
+      border: 1.3px solid #fee7ff;
+      animation: sliderWobble 6s infinite alternate;
+    }
+    @keyframes sliderWobble {
+      0% {box-shadow:0 7px 21px #130f4136;}
+      100%{box-shadow:0 13px 27px #f891ffa6, 0 7px 21px #fbe3ff48;}
+    }
+    .slides{
+      display:flex;
+      transition:transform 0.53s cubic-bezier(.8,1.96,.65,1.1);
+      min-width:100%;
+    }
+    .slide{
+      min-width:100%;
+      box-sizing:border-box;
+      padding:34px 18px 48px 18px;
+      flex-shrink:0;
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      position:relative;
+      background: linear-gradient(100deg,#e9fff5 68%,#f9dfff 100%);
+      animation: bgfadeSlide 10s infinite alternate;
+      opacity:0.92;
+    }
+    @keyframes bgfadeSlide {
+      0%   {background:linear-gradient(99deg,#e9fff5 66%,#f5dfff 100%);}
+      25%  {background:linear-gradient(113deg,#f6ffed 62%,#fff7e1 100%);}
+      52%  {background:linear-gradient(134deg,#e9f7fc 54%,#f9fed8 100%);}
+      75%  {background:linear-gradient(114deg,#f7f5fd 82%,#fffddb 100%);}
+      100% {background:linear-gradient(105deg,#e9fff5 66%,#f9dfff 100%);}
+    }
+    .poster-main{
+      flex:2;
+      min-width:250px;
+      z-index:2;
+      animation: posterFadeIn .6s;
+    }
+    @keyframes posterFadeIn {
+      0% {opacity:0; transform:scale(.92);}
+      100%{opacity:1; transform:scale(1);}
+    }
+    .slide-title{
+      font-size: 54px;
+      font-weight: 900;
+      background: linear-gradient(93deg,#914bfd,#b67323,#35ab53 85%);
+      background-clip:text;
+      -webkit-background-clip:text;
+      color:transparent;
+      -webkit-text-fill-color:transparent;
+      letter-spacing: -1.5px;
+      margin-bottom:8px;
+      line-height:1.09;
+      animation: pulseTitle 1.08s infinite alternate;
+    }
+    @keyframes pulseTitle {
+      0% {letter-spacing:-2px; filter:brightness(1);}
+      100%{letter-spacing:2px; filter:brightness(1.17);}
+    }
+    .glow-grammer {
+      display:inline-block;
+      padding: 6px 22px;
+      margin: 16px 0 22px 0;
+      background: linear-gradient(90deg,#ffe968 15%,#fffdea 90%);
+      border-radius: 11px;
+      font-size: 24px;
+      font-weight: 900;
+      color: #8b650d;
+      box-shadow: 0 3px 14px 0 #ffeb3b1b;
+      text-shadow: 0 0 14px #fff9d19e, 0 2px 3px #ffe59d35;
+      letter-spacing: .12em;
+      animation: grammeranim 2.1s infinite alternate, hue-grammer 5s infinite linear;
+    }
+    @keyframes grammeranim {
+      0% {box-shadow:0 2px 11px 0 #fff4abf5;}
+      100%{box-shadow:0 8px 22px 0 #fff7e280;}
+    }
+    @keyframes hue-grammer{
+      from{filter: hue-rotate(0deg);}
+      to{filter: hue-rotate(20deg);}
+    }
+    .small-banner{
+      background:#261940;
+      color:#fff;
+      display:inline-block;
+      padding:8px 26px 7px 26px;
+      margin:8px 0 10px 0;
+      font-weight:700;
+      font-size:22px;
+      border-radius:10px;
+      letter-spacing:0.10em;
+      animation: fadeInUp 1.07s;
+      box-shadow:0 1.5px 18px #cb57f255;
+      border:2px solid #b073ff27;
+    }
+    @keyframes fadeInUp {
+      0%{opacity:0; transform:translateY(54px);}
+      100%{opacity:1; transform:translateY(0);}
+    }
+    .slide-box{
+      background: linear-gradient(107deg, #fd6184 20%, #e6a426 83%);
+      color:#fff;
+      padding:13px 27px;
+      border-radius:14px;
+      margin-bottom:22px;
+      margin-top:14px;
+      width: auto;
+      display:inline-block;
+      font-size:32px;
+      font-weight:800;
+      letter-spacing:0.09em;
+      box-shadow:0 2px 18px rgba(250,47,70,.17);
+      border:2px solid #faeff98a;
+      animation: bounceIn .95s, pulseBox 3s infinite alternate;
+    }
+    @keyframes bounceIn{
+      0%{transform:scale(0.8);}
+      55%{transform:scale(1.14);}
+      100%{transform:scale(1);}
+    }
+    @keyframes pulseBox {
+      0% { filter: brightness(1);}
+      100%{filter: brightness(1.09);}
+    }
+    .date-box{
+      margin-top:11px;
+      background:linear-gradient(112deg,#fffbe6,#e5f7fc);
+      padding:17px 11px 15px 11px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:23px;
+      color:#333;
+      width:230px;
+      text-align:center;
+      border:2px solid #ffe86d88;
+      letter-spacing:0.12em;
+      box-shadow:0 2px 12px rgba(78,78,78,.11);
+      animation: fadeInUp 1.02s, pulseBox 3.7s infinite alternate;
+    }
+    .fees-bubble{
+      position: absolute;
+      right: 36px; top: 88px;
+      background: linear-gradient(115deg,#f5e86b 60%,#ffdb29 100%);
+      color: #222;
+      padding: 20px 39px 20px 25px;
+      border-radius: 85px 68px 105px 79px / 56px 88px 75px 68px;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      box-shadow: 0 7px 38px rgba(255,222,52,0.21),0 1.5px 6px #fbe0ff62;
+      border:4px solid #fcf6b6;
+      text-align:center;
+      animation: bubbleanim 1.4s infinite alternate, wiggle 6s infinite linear;
+      z-index:3;
+    }
+    @keyframes bubbleanim {
+      0%{transform:translateY(0) scale(.92);}
+      55%{transform:translateY(-12px) scale(1.09);}
+      100%{transform:translateY(0) scale(1);}
+    }
+    @keyframes wiggle {
+      0% {filter: hue-rotate(0deg);}
+      100% {filter: hue-rotate(20deg);}
+    }
+    .slide-img-human{
+      width:200px;
+      border-radius:50%;
+      box-shadow:0 7px 41px 0 rgba(90,100,255,.22);
+      border:5px solid #fff8cd;
+      background:#fff;
+      margin-left:8px;
+      margin-right:8px;
+      animation: imgFloat 2.4s infinite alternate, hueFloat 9s infinite linear;
+      transition: box-shadow .25s;
+    }
+    .slide-img-human:hover{
+      box-shadow: 0 7px 57px 0 #ffebe9, 0 7px 27px #f1eaff91;
+      filter:brightness(1.07) saturate(1.3);
+    }
+    @keyframes imgFloat {
+      from{transform:translateY(0);}
+      to{transform:translateY(-20px);}
+    }
+    @keyframes hueFloat {
+      0% {filter: hue-rotate(0deg);}
+      100% {filter: hue-rotate(-13deg);}
+    }
+    .features{
+      margin:19px 0 0 0;
+      display: flex;
+      flex-wrap:wrap;
+      gap: 27px 14px;
+      animation: fadeInUp 1.7s cubic-bezier(.29,.98,.23,1.24);
+    }
+    .features ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      WILL-CHANGE:opacity;
+    }
+    .features li{
+      background:rgba(140,47,70,0.09);
+      margin-bottom:11px;
+      padding:7px 18px 7px 15px;
+      border-radius:8px;
+      font-size:16.5px;
+      font-weight:600;
+      display: inline-block;
+      transition: background .19s, box-shadow .22s;
+      animation: bounceIn .96s;
+      box-shadow:0 1.5px 9px #fedeff40;
+      position:relative;
+    }
+    .features li:hover {
+      background: #fff6bd;
+      box-shadow: 0 1.5px 18px #fdceee59;
+      color:#b83309;
+      transform: scale(1.05);
+    }
+    .features li:before{
+      content:"✔";
+      margin-right:7px;
+      color:#49a061;
+      font-size:19px;
+      vertical-align:middle;
+      text-shadow: 0 2px 6px #bae99b48;
+    }
+    .certification{
+      margin:19px 0 8px 0;
+      background:linear-gradient(112deg,#f2fff2 90%,#fff5dc 100%);
+      border:2px solid #ececec;
+      border-radius:17px;
+      padding:14px 14px 8px 16px;
+      box-shadow:0 3px 9px rgba(214,234,209,.04);
+      animation: bounceIn 1.39s cubic-bezier(.29,.91,.69,1.6);
+      font-size: 19px;
+      color: #333;
+      position: relative;
+      z-index:2;
+      transition: box-shadow .2s;
+    }
+    .certification:hover{
+      box-shadow:0 10px 33px #bfe9f736;
+      border:2.5px solid #ffe3b9;
+    }
+    .certification h4{
+      font-weight:800;
+      font-size:22px;
+      margin-bottom:2px;
+      color:#61984b;
+      display:inline-block;
+      animation: pulseTitle 1.6s infinite alternate;
+    }
+    .slider-controls{
+      position:absolute;
+      display:flex;
+      justify-content: space-between;
+      width:100%;
+      left:0; top:48%;
+      transform:translateY(-50%);
+      z-index:11;
+      pointer-events:none;
+    }
+    .slide-btn{
+      background:linear-gradient(111deg, #f8ecbc 60%, #bcb9fd 100%);
+      border:none;
+      border-radius:34px;
+      width:49px; height:49px;
+      box-shadow:0 2px 13px rgba(0,0,0,0.11);
+      font-size:28px;
+      color:#543ac6ed;
+      cursor:pointer;
+      opacity: .88;
+      pointer-events:all;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:background .18s, box-shadow .15s, color .1s;
+      font-weight:900;
+      animation: bounceIn 0.85s;
+    }
+    .slide-btn:active, .slide-btn:focus{outline:none;}
+    .slide-btn:hover{
+      background:#ffe44d;
+      color:#ed6a1a;
+      opacity:1;
+      box-shadow:0 10px 18px #ffe44dad,0 4px 10px #ffe44d48;
+      transform: scale(1.3) rotate(-6deg);
+      z-index:100;
+    }
+    .unique-wave{
+      position:absolute;
+      bottom:-60px;
+      left:-60px;
+      width:700px;
+      height:180px;
+      z-index:1;
+      pointer-events: none;
+      opacity:0.20;
+      filter: blur(2px) hue-rotate(22deg);
+      animation: waveShift 7s infinite linear;
+    }
+    @keyframes waveShift {
+      from{transform:translateX(0);}
+      to{transform:translateX(120px);}
+    }
+    .ad-footer{
+      text-align:center;
+      margin-top:28px;
+      font-size:23px;
+      font-weight:700;
+      color:#431c77;
+      animation: fadeInUp 1.1s;
+      letter-spacing:.03em;
+      border-radius:13px;
+      background:linear-gradient(97deg,#fffde9 55%,#e7e7fd 100%);
+      padding-top:16px;
+      padding-bottom:12px;
+      box-shadow:0 2px 11px #471b7d13;
+    }
+    .ad-footer strong{
+      color:#ec7e3e;
+      letter-spacing:.08em;
+      font-weight:900;
+      filter: drop-shadow(0px 1.8px 7px #e8b7999a);
+      animation: pulseBox 2.2s infinite alternate;
+    }
+    .call-btn{
+      background:linear-gradient(90deg,#ffd61c 70%,#ffc223 100%);
+      color:#392500;
+      font-weight:800;
+      border-radius:18px;
+      padding:13px 39px;
+      font-size:23px;
+      transition: filter .2s,box-shadow .2s;
+      margin:15px auto 0px auto;
+      display:block;
+      outline:0;
+      border:none;
+      box-shadow: 0 3px 21px rgba(255,220,60,.15);
+      animation: bubbleanimBtn 2.2s infinite alternate;
+      cursor:pointer;
+      letter-spacing:.03em;
+      border-bottom:3.7px solid #f8bf2c80;
+    }
+    @keyframes bubbleanimBtn {
+      0%{transform:scale(1);}
+      60%{transform:scale(1.06);}
+      100%{transform:scale(1);}
+    }
+    .call-btn:hover {
+      filter: brightness(1.19) saturate(1.1);
+      box-shadow:0 10px 28px #ffe44dad,0 4px 11px #ffd788b8;
+      color:#291c00;
+      animation:none;
+    }
+
+    @media(max-width:900px){
+      .ad-container{max-width:99vw;}
+      .slide{flex-direction:column; align-items:center; gap:16px;}
+      .poster-main{width:100%;}
+      .slide-img-human{margin-bottom:13px; width:130px;}
+      .fees-bubble{right:20px;top:108px;font-size:24px;}
+      .slide-title{font-size:32px;}
+      .slide-box{font-size:17px;}
+      .small-banner{font-size:16px; padding:7px 19px;}
+    }
+    @media(max-width:600px){
+      .ad-container{padding:7px;border-radius:14px;}
+      .poster-slider{border-radius:11px;}
+      .features{flex-direction:column;gap:8px;}
+      .slide-img-human{width:90px;}
+      .fees-bubble{display:none;}
+      .slide-title{font-size:15px;}
+      .slide-box{font-size:11.5px;padding:5px 9px;}
+      .date-box{font-size:13px; width:105px;}
+      .call-btn{font-size:15px; padding:9px 13px;}
+      .ad-footer{font-size:13px;}
+    }
+    /* Additional sparkles over slider */
+    .sparkle {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+      z-index: 20;
+      background: radial-gradient(circle,#fff7e9 0%, #fff5c6aa 90%, transparent 100%);
+      border-radius:50%;
+      opacity:.85;
+      animation: sparkle-anim 1.6s infinite linear;
+    }
+    @keyframes sparkle-anim {
+      0%{opacity:.2; transform:scale(.3) translateY(0);}
+      25%{opacity:.8; transform:scale(.65) translateY(-6px);}
+      50%{opacity:1;  transform:scale(1) translateY(4px);}
+      75%{opacity:.7;}
+      100%{opacity:.2; transform:scale(.3) translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="ad-container">
+
+    <svg class="unique-wave" viewBox="0 0 700 180"><path fill="#ffe44d" fill-opacity="1" d="M0,160 Q200,80 350,160 T700,80 V180H0Z"/></svg>
+    <!-- Animated Sparkles for more animation -->
+    <div id="sparkle-box"></div>
+    <!-- Slider -->
+    <div class="poster-slider" id="sliderMain">
+      <div class="slides" id="posterSlides">
+        <!-- Slide 1 -->
+        <div class="slide" data-slide="0">
+          <div class="poster-main">
+            <div class="slide-title">SPOKEN <br>ENGLISH</div>
+            <div class="small-banner">CLASSES WITH</div>
+            <div class="glow-grammer">GRAMMER</div>
+            <div class="slide-box">10 DAYS WORKSHOP</div>
+            <div class="date-box">
+              17-05-2026 <br> TO <br> 27-05-2026
+            </div>
+            <div class="features mt-5 ps-2 pe-2">
+              <ul>
+                <li>Speak English Confidently</li>
+                <li>Improve Grammar</li>
+                <li>Communication Practice</li>
+                <li>Real Life Situations</li>
+                <li>Public Speaking</li>
+              </ul>
+              <ul>
+                <li>Interview Skills</li>
+                <li>Group Discussion</li>
+                <li>Vocabulary Building</li>
+                <li>Presentation Skills</li>
+                <li>Daily Speaking Tasks</li>
+              </ul>
+            </div>
+            <div class="certification mt-3">
+              <h4>WITH CERTIFICATION</h4>
+              <div>
+                Certificate will be provided after successful completion.
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-center justify-content-end">
+            <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/person-fill.svg"
+                 alt="Human Icon" class="slide-img-human mb-3">
+            <div class="fees-bubble">
+              FEES<br>499/-
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide" data-slide="1">
+          <div class="poster-main">
+            <div class="slide-title">COMMUNICATION <br>& SOFT SKILLS</div>
+            <div class="small-banner">With Expert Guidance</div>
+            <div class="glow-grammer">GRAMMER</div>
+            <div class="slide-box">INTERVIEW TRAINING</div>
+            <div class="date-box">
+              01-06-2026 <br> TO <br> 11-06-2026
+            </div>
+            <div class="features mt-5 ps-2 pe-2">
+              <ul>
+                <li>Latest Group Discussion Methods</li>
+                <li>Email Etiquette</li>
+                <li>Mock Interviews</li>
+                <li>Business Language</li>
+                <li>Body Language</li>
+              </ul>
+              <ul>
+                <li>Interactive Activities</li>
+                <li>Confidence Building</li>
+                <li>Debates</li>
+                <li>Impromptu Speaking</li>
+                <li>Role Plays</li>
+              </ul>
+            </div>
+            <div class="certification mt-3">
+              <h4>INCLUDES DIGITAL BADGE</h4>
+              <div>
+                Get a digital participation badge to share on LinkedIn!
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-center justify-content-end">
+            <img src="https://img.icons8.com/color/180/000000/teacher.png"
+                 alt="Teacher Cartoon" class="slide-img-human mb-3">
+            <div class="fees-bubble">
+              FEES<br>650/-
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide" data-slide="2">
+          <div class="poster-main">
+            <div class="slide-title">ENGLISH FOR <br>STUDENTS</div>
+            <div class="small-banner">CHILDREN & TEENS</div>
+            <div class="glow-grammer">GRAMMER</div>
+            <div class="slide-box">SUMMER BATCH</div>
+            <div class="date-box">
+              01-04-2026 <br> TO <br> 15-04-2026
+            </div>
+            <div class="features mt-5 ps-2 pe-2">
+              <ul>
+                <li>Story Telling</li>
+                <li>Quiz & Games</li>
+                <li>Fun Speaking Tasks</li>
+                <li>Comprehension Practice</li>
+                <li>Confidence Boost</li>
+              </ul>
+              <ul>
+                <li>Live Group Activities</li>
+                <li>Vocabulary Olympics</li>
+                <li>Pronunciation Sessions</li>
+                <li>Certifications</li>
+                <li>Prize Distribution</li>
+              </ul>
+            </div>
+            <div class="certification mt-3">
+              <h4>AWARDS & MERIT</h4>
+              <div>
+                Top speakers will get surprise prizes!
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-column align-items-center justify-content-end">
+            <img src="https://img.icons8.com/fluency/200/reading-book.png"
+                 alt="Kids Reading Book" class="slide-img-human mb-3">
+            <div class="fees-bubble">
+              FEES<br>399/-
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Slider Buttons -->
+      <div class="slider-controls">
+        <button class="slide-btn" id="slidePrev" aria-label="Previous Slide">&lt;</button>
+        <button class="slide-btn" id="slideNext" aria-label="Next Slide">&gt;</button>
+      </div>
+    </div>
+
+    <div class="ad-footer">
+      <div>
+        <strong>TRIPURANENI SUJITH</strong> <br>
+        Advanced Spoken English Trainer
+      </div>
+      <button class="call-btn" onclick="window.open('tel:630355873','_self')">
+        📞 630355873 &nbsp; &nbsp; | &nbsp; REGISTER NOW
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Banner Slider Logic
+    const slides = document.getElementById('posterSlides');
+    const totalSlides = slides.children.length;
+    let current = 0;
+
+    // Animation: fade slides
+    function animateSlideShow(prevIdx, newIdx) {
+      const allSlides = slides.children;
+      for (let i = 0; i < allSlides.length; i++) {
+        allSlides[i].style.opacity = i === newIdx ? "1" : "0.68";
+        allSlides[i].style.transition = i === newIdx ? "opacity 0.33s cubic-bezier(.5,1.6,.51,1.04)" : "opacity 0.2s";
+      }
+    }
+
+    function updateSlider(prev=current){
+      slides.style.transform = `translateX(-${current * 100}%)`;
+      animateSlideShow(prev, current);
+    }
+    document.getElementById('slidePrev').addEventListener('click',function(){
+      let prev = current;
+      current = (current-1+totalSlides)%totalSlides;
+      updateSlider(prev);
+      manualSliderReset();
+    });
+    document.getElementById('slideNext').addEventListener('click',function(){
+      let prev = current;
+      current = (current+1)%totalSlides;
+      updateSlider(prev);
+      manualSliderReset();
+    });
+
+    // Autoplay: 1s interval
+    let autoSlide = setInterval(()=>{
+      let prev = current;
+      current = (current+1)%totalSlides;
+      updateSlider(prev);
+    }, 1000);
+
+    // Pause/Resume on hover
+    slides.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    slides.addEventListener('mouseleave', () => {
+      autoSlide = setInterval(()=>{
+        let prev = current;
+        current = (current+1)%totalSlides;
+        updateSlider(prev);
+      }, 1000);
+    });
+
+    // Reset interval timer if button click
+    function manualSliderReset() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(()=>{
+        let prev = current;
+        current = (current+1)%totalSlides;
+        updateSlider(prev);
+      }, 1000);
+    }
+
+    // Initial slide animation:
+    animateSlideShow(0, 0);
+
+    // Sparkle Animation for more wow!
+    function genSparkle(x, y, id){
+      const sp = document.createElement("div");
+      sp.className = "sparkle";
+      sp.style.left = `${x}px`;
+      sp.style.top = `${y}px`;
+      sp.style.animationDelay = Math.random()*1.4 + "s";
+      sp.id = "spk"+id+Math.floor(Math.random()*10000);
+      return sp;
+    }
+    // Attach sparkles randomly to poster-slider
+    function randomSparkle() {
+      const box = document.getElementById('sliderMain');
+      const w = box.offsetWidth, h = box.offsetHeight;
+      const sparkleBox = document.getElementById('sparkle-box');
+      sparkleBox.innerHTML = "";
+      for(let i=0; i<7; i++) {
+        let x = Math.random()*(w-18);
+        let y = Math.random()*(h-38) + 10;
+        sparkleBox.appendChild(genSparkle(x,y,i));
+      }
+    }
+    setTimeout(randomSparkle,650);
+    window.addEventListener('resize',()=>setTimeout(randomSparkle, 330));
+    // sparkle update every few seconds
+    setInterval(randomSparkle,1400);
+  </script>
+</body>
+</html>
