@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple CSS Layers</title>
+  <style>
+    body {
+      margin: 0;
+      height: 250px;
+      position: relative;
+      background: #f5f6fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .layer {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 300px;
+      height: 180px;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: white;
+      float: left;
+      clear: both;
+      margin-bottom: 20px;
+    }
+
+    .layer1 {
+      background: #007bff;
+      z-index: 1;
+      float: left;
+    }
+    .layer2 {
+      background: #28a745;
+      left: calc(50% + 30px);
+      top: calc(50% + 30px);
+      z-index: 2;
+      opacity: 0.95;
+      float: right;
+    }
+    .layer3 {
+      background: #ffc107;
+      color: #222;
+      left: calc(50% + 60px);
+      top: calc(50% + 60px);
+      z-index: 3;
+      opacity: 0.9;
+      float: left;
+    }
+
+  
+    @media (max-width: 600px) {
+      .layer1 {
+        background: #51d4f1;
+        color: #fff;
+      }
+      .layer2 {
+        background: #b22020;
+        color: #fff;
+      }
+      .layer3 {
+        background: #fc3bff;
+        color: #333;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layer layer1">Layer 1 (bottom)</div>
+  <div class="layer layer2">Layer 2 (middle)</div>
+  <div class="layer layer3">Layer 3 (top)</div>
+</body>
+</html>
