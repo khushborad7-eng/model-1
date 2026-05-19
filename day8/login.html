@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Silver Oak University</title>
+    <!-- Bootstrap 3.4.1 CSS CDN for carousel compatibility -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Added Font Awesome and Google Fonts for attractive navbar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #fff;
+        color: #000;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-family: 'Roboto', Arial, sans-serif;
+      }
+      main {
+        flex: 1 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .login-row {
+        margin-top: 48px;
+        margin-bottom: 48px;
+      }
+      /* Attractive Navbar Custom Styles (copied from home.html) */
+      .navbar.custom-navbar {
+        background: linear-gradient(90deg, #4731d3 0%, #00c6ff 100%);
+        border: none;
+        padding: 0;
+        box-shadow: 0 4px 24px rgba(36, 37, 38, 0.09);
+        min-height: 68px;
+      }
+      .navbar.custom-navbar .navbar-header .navbar-brand {
+        font-family: 'Roboto', Arial, sans-serif;
+        font-weight: 700;
+        color: #fff !important;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .navbar.custom-navbar .navbar-brand i {
+        color: #ffe773;
+      }
+      .navbar.custom-navbar .nav > li > a {
+        color: #fff !important;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        transition: background 0.26s, color 0.14s;
+        font-size: 1.1rem;
+        border-radius: 22px;
+        margin: 0 6px;
+        padding: 12px 18px !important;
+        position: relative;
+      }
+      .navbar.custom-navbar .nav > li.active > a,
+      .navbar.custom-navbar .nav > li > a:hover,
+      .navbar.custom-navbar .nav > li > a:focus {
+        color: #373737 !important;
+        background: rgba(255,255,255,0.90) !important;
+        box-shadow: 0 2px 24px rgba(0,0,0,0.06);
+        text-shadow: none;
+      }
+      .navbar.custom-navbar .navbar-toggle {
+        border-color: #fff !important;
+        background: rgba(255,255,255,0.2);
+      }
+      .navbar.custom-navbar .icon-bar {
+        background-color: #fff !important;
+      }
+      @media (max-width: 767px) {
+        .navbar.custom-navbar .navbar-header .navbar-brand {
+          font-size: 1.3rem;
+          gap: 5px;
+        }
+        .navbar.custom-navbar .nav > li > a {
+          font-size: 1rem;
+          text-align: left;
+        }
+      }
+      /* End of navbar styles */
+      .footer {
+        background: #000;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        margin-bottom: 0;
+        border-radius: 0;
+      }
+    </style>
+</head>
+<body>
+  <!-- More Attractive Bootstrap Navbar (from home.html) -->
+  <nav class="navbar navbar-inverse navbar-static-top custom-navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="home.html">
+          <i class="fas fa-graduation-cap"></i> Home
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="registration.html"><i class="fa fa-user-plus"></i> Registration</a></li>
+          <li class="active"><a href="login.html"><i class="fa fa-sign-in-alt"></i> Login</a></li>
+          <li><a href="gallery.html"><i class="fa fa-images"></i> Gallery</a></li>
+          <li><a href="contactus.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+          <li><a href="flexbox.html"><i class="fa fa-th-large"></i> Flexbox</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <div class="row login-row">
+        <div class="col-md-6 col-sm-8 col-xs-12 col-md-offset-3 col-sm-offset-2">
+          <div class="panel panel-info">
+            <div class="panel-heading text-center">
+              <h2><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login</h2>
+            </div>
+            <div class="panel-body">
+              <form onsubmit="return false;">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                    <input type="email" class="form-control input-lg" id="email" placeholder="Email address" autocomplete="username" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" class="form-control input-lg" id="password" placeholder="Password" autocomplete="current-password" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" id="remember"> Remember me
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#loginConfirmModal">
+                    <span class="glyphicon glyphicon-log-in"></span> Sign In
+                  </button>
+                </div>
+                <div class="form-group text-center">
+                  <a href="#" class="text-info">Forgot password?</a>
+                </div>
+              </form>
+            </div>
+            <div class="panel-footer text-center">
+              <small>Don't have an account? <a href="registration.html">Register</a></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="loginConfirmModal" tabindex="-1" role="dialog" aria-labelledby="loginConfirmLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="loginConfirmLabel">Confirm Login</h4>
+          </div>
+          <div class="modal-body text-center">
+            Click confirm to login
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" onclick="window.location.href='login.html'">Cancel</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='home.html'">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    &copy; Silver oak university
+  </footer>
+  <!-- Scripts (as in home.html) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
