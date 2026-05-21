@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gallery - Silver Oak University</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 3.4.1 CSS CDN for header/footer compatibility -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Font Awesome for nav icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <!-- Google Fonts for attractive navbar -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    main {
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+    }
+    h2.text-center {
+      margin: 24px 0 16px 0;
+      width: 100vw;
+    }
+    /* === Attractive Navbar Custom Styles === */
+    .navbar.custom-navbar {
+      background: linear-gradient(90deg, #4731d3 0%, #00c6ff 100%);
+      border: none;
+      padding: 0;
+      box-shadow: 0 4px 24px rgba(36, 37, 38, 0.09);
+      min-height: 68px;
+    }
+    .navbar.custom-navbar .navbar-header .navbar-brand {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 700;
+      color: #fff !important;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .navbar.custom-navbar .navbar-brand i {
+      color: #ffe773;
+    }
+    .navbar.custom-navbar .nav > li > a {
+      color: #fff !important;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      transition: background 0.26s, color 0.14s;
+      font-size: 1.1rem;
+      border-radius: 22px;
+      margin: 0 6px;
+      padding: 12px 18px !important;
+      position: relative;
+    }
+    .navbar.custom-navbar .nav > li.active > a,
+    .navbar.custom-navbar .nav > li > a:hover,
+    .navbar.custom-navbar .nav > li > a:focus {
+      color: #373737 !important;
+      background: rgba(255,255,255,0.90) !important;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
+      text-shadow: none;
+    }
+    .navbar.custom-navbar .navbar-toggle {
+      border-color: #fff !important;
+      background: rgba(255,255,255,0.2);
+    }
+    .navbar.custom-navbar .icon-bar {
+      background-color: #fff !important;
+    }
+    @media (max-width: 767px) {
+      .navbar.custom-navbar .navbar-header .navbar-brand {
+        font-size: 1.3rem;
+        gap: 5px;
+      }
+      .navbar.custom-navbar .nav > li > a {
+        font-size: 1rem;
+        text-align: left;
+      }
+    }
+    /* End of navbar styles */
+
+    .gallery-img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s cubic-bezier(0.4,0,0.2,1);
+      background: #e2e2e2;
+    }
+    .thumbnail {
+      border-radius: 8px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      border: none;
+      overflow: hidden;
+      background: #f8f9fa;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .caption {
+      padding: 1rem;
+    }
+    .gallery-title {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    .thumbnail:hover .gallery-img,
+    .gallery-img:hover {
+      transform: scale(1.07) rotate(-2deg);
+      box-shadow: 0 6px 32px rgba(32,32,32,.16), 0 1.5px 6px rgba(40,40,40,.12);
+      cursor: pointer;
+      z-index: 2;
+    }
+    .footer {
+      background: #000;
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <!-- More Attractive Bootstrap Navbar (Header) -->
+  <nav class="navbar navbar-inverse navbar-static-top custom-navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="home.html">
+          <i class="fas fa-graduation-cap"></i> Home
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="registration.html"><i class="fa fa-user-plus"></i> Registration</a></li>
+          <li><a href="login.html"><i class="fa fa-sign-in-alt"></i> Login</a></li>
+          <li class="active"><a href="gallery.html"><i class="fa fa-images"></i> Gallery</a></li>
+          <li><a href="contactus.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+          <li><a href="flexbox.html"><i class="fa fa-th-large"></i> Flexbox</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <h2 class="text-center gallery-title">Image Gallery</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail h-100">
+            <img class="gallery-img" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Gallery Image 1">
+            <div class="caption text-center">
+              <a href="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" target="_blank" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail h-100">
+            <img class="gallery-img" src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=600&q=80" alt="Gallery Image 2">
+            <div class="caption text-center">
+              <a href="https://images.unsplash.com/photo-1465101162946-4377e57745c3?auto=format&fit=crop&w=600&q=80" target="_blank" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail h-100">
+            <img class="gallery-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Gallery Image 3">
+            <div class="caption text-center">
+              <a href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" target="_blank" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail h-100">
+            <img class="gallery-img" src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=600&q=80" alt="Gallery Image 4">
+            <div class="caption text-center">
+              <a href="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6?auto=format&fit=crop&w=600&q=80" target="_blank" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail h-100">
+            <img class="gallery-img" src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=600&q=80" alt="Gallery Image 5">
+            <div class="caption text-center">
+              <a href="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=600&q=80" target="_blank" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!--
+        The 6th image did not match the sizing/layout of the others due to omission of h-100 on .thumbnail or potential differences in markup (sometimes this presents visually due to unequal heights on shorter grids).
+        This rewrite ensures all thumbnails have consistent layout by adding h-100 class and consistent markup.
+        -->
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail h-100">
+            <!-- Changed image to better match sizing/layout of other images -->
+            <img class="gallery-img" src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=600&q=80" alt="Gallery Image 5">
+            <div class="caption text-center">
+              <a href="https://images.unsplash.com/photo-1467891708171-618fa3a1a463?auto=format&fit=crop&w=600&q=80" target="_blank" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    &copy; Silver oak university
+  </footer>
+</body>
+</html>

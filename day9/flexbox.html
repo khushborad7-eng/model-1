@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Table - Flexbox Layout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <header class="fixed w-full top-0 left-0 z-20 py-5 bg-blue-700 shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center px-6">
+      <h1 class="text-2xl md:text-3xl font-bold text-white">
+        Flexbox Student Table Filter
+      </h1>
+    </div>
+  </header>
+  <div class="flex flex-1 min-h-screen">
+    <nav class="flex flex-col h-screen w-48 bg-black p-7 fixed left-0 top-0 mt-[75px] z-10">
+      <a href="home.html" class="py-2 px-3 my-1 rounded hover:bg-gray-500 text-white">Home</a>
+      <a href="registration.html" class="py-2 px-3 my-1 rounded hover:bg-gray-500 text-white">Registration</a>
+      <a href="login.html" class="py-2 px-3 my-1 rounded hover:bg-gray-500 text-white">Login</a>
+      <a href="gallery.html" class="py-2 px-3 my-1 rounded hover:bg-gray-500 text-white">Gallery</a>
+    </nav>
+    <main class="flex-1 ml-48 flex flex-col items-center justify-start pt-[80px]">
+      <div class="w-full max-w-2xl mt-4 bg-gradient-to-tr from-blue-50 via-white to-blue-100 rounded-2xl p-7 border-2 border-blue-300 shadow-lg shadow-blue-100">
+        <h2 class="text-3xl font-bold mb-6 text-blue-900 tracking-wide text-center flex items-center justify-center gap-3">
+          <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 17l4 4 4-4m-4-5v9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Student Data
+        </h2>
+        <div class="mb-6 flex flex-col items-center">
+          <input type="text" id="filterBox" placeholder="Filter students..." class="w-72 px-5 py-2 rounded-full border-2 border-blue-200 focus:border-blue-500 outline-none transition text-blue-900 shadow-sm placeholder:italic placeholder:text-blue-300">
+        </div>
+        <div class="overflow-x-auto rounded-xl shadow">
+          <table class="min-w-full text-base bg-gradient-to-br from-white via-blue-50 to-white rounded-xl" id="dataTable">
+            <thead>
+              <tr>
+                <th class="px-6 py-4 text-left bg-blue-800 text-white font-semibold tracking-wider rounded-tl-xl">ID</th>
+                <th class="px-6 py-4 text-left bg-blue-800 text-white font-semibold">Name</th>
+                <th class="px-6 py-4 text-left bg-blue-800 text-white font-semibold">Email</th>
+                <th class="px-6 py-4 text-left bg-blue-800 text-white font-semibold">Course</th>
+                <th class="px-6 py-4 text-left bg-blue-800 text-white font-semibold rounded-tr-xl">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-blue-400 transition">
+                <td class="px-6 py-3 border-b border-blue-200 font-mono font-bold text-blue-700">101</td>
+                <td class="px-6 py-3 border-b border-blue-200">John Deo</td>
+                <td class="px-6 py-3 border-b border-blue-200">johndeo@email.com</td>
+                <td class="px-6 py-3 border-b border-blue-200">B.Tech (CSE)</td>
+                <td class="px-6 py-3 border-b border-blue-200">
+                  <span class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-700 font-semibold text-sm">Active</span>
+                </td>
+              </tr>
+              <tr class="bg-blue-100/20 hover:bg-blue-400 transition">
+                <td class="px-6 py-3 border-b border-blue-200 font-mono font-bold text-blue-700">102</td>
+                <td class="px-6 py-3 border-b border-blue-200">Sarah Smith</td>
+                <td class="px-6 py-3 border-b border-blue-200">sarah.smith@email.com</td>
+                <td class="px-6 py-3 border-b border-blue-200">B.Sc (Maths)</td>
+                <td class="px-6 py-3 border-b border-blue-200">
+                  <span class="inline-block px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 font-semibold text-sm">Pending</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-400 transition">
+                <td class="px-6 py-3 border-b border-blue-200 font-mono font-bold text-blue-700">103</td>
+                <td class="px-6 py-3 border-b border-blue-200">Michael Lee</td>
+                <td class="px-6 py-3 border-b border-blue-200">michael.lee@email.com</td>
+                <td class="px-6 py-3 border-b border-blue-200">MBA</td>
+                <td class="px-6 py-3 border-b border-blue-200">
+                  <span class="inline-block px-3 py-1 rounded-full bg-red-100 text-red-700 font-semibold text-sm">Inactive</span>
+                </td>
+              </tr>
+              <tr class="bg-blue-100/20 hover:bg-blue-400 transition">
+                <td class="px-6 py-3 border-b border-blue-200 font-mono font-bold text-blue-700">104</td>
+                <td class="px-6 py-3 border-b border-blue-200">Emma Wilson</td>
+                <td class="px-6 py-3 border-b border-blue-200">emma.wilson@email.com</td>
+                <td class="px-6 py-3 border-b border-blue-200">B.Des</td>
+                <td class="px-6 py-3 border-b border-blue-200">
+                  <span class="inline-block px-3 py-1 rounded-full bg-green-100 text-green-700 font-semibold text-sm">Active</span>
+                </td>
+              </tr>
+              <tr class="hover:bg-blue-400 transition">
+                <td class="px-6 py-3 font-mono font-bold text-blue-700">105</td>
+                <td class="px-6 py-3">Ankit Patel</td>
+                <td class="px-6 py-3">ankit.patel@email.com</td>
+                <td class="px-6 py-3">BBA</td>
+                <td class="px-6 py-3">
+                  <span class="inline-block px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 font-semibold text-sm">Pending</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="bg-blue-800 text-white text-center py-4 mt-auto shadow-inner relative z-10">
+    &copy; Silver Oak University
+  </footer>
+</body>
+</html>

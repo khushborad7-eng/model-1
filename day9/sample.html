@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables Popup (Dynamic)</title>
+</head>
+<body>
+    <h2>JavaScript Methods</h2>
+    <label>
+        Enter X: <input type="number" id="inputX" oninput="updateValues()">
+    </label>
+    <br>
+    <label>
+        Enter Y: <input type="number" id="inputY" oninput="updateValues()">
+    </label>
+    <h1 id="demo">Result</h1>
+    <button type="button" onclick="alertbox()">Alert Box</button>
+    <button type="button" onclick="confirmbox()">Confirm Box</button>
+    <button type="button" onclick="promtbox()">Promt Box</button>
+    <script>
+        var x = Number(document.getElementById("inputX").value);
+        var y = Number(document.getElementById("inputY").value);
+        var z = x + y;
+        
+        function updateValues() {
+            x = Number(document.getElementById("inputX").value);
+            y = Number(document.getElementById("inputY").value);
+            z = x + y;
+            document.getElementById("demo").innerHTML = "value of z is : " + z;
+        }
+
+        
+        updateValues();
+
+        function alertbox() {
+            alert("Value of z is: " + z);
+        }
+        function confirmbox() {
+            confirm(z);
+        }
+        function promtbox() {
+            prompt(z);
+        }
+    </script>
+</body>
+</html>
