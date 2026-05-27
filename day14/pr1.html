@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+     body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 70%;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #000000;
+        }
+        th {
+            background-color: #0f0e0e;
+            color: white;
+        }
+        .evenRow {
+            background-color: #7a7a7a;
+        }
+        .oddRow {
+            background-color: #ffffff;
+        }
+        tbody tr:hover {
+            background-color: #31e0ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery</h1>
+    <h1>PR1</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>25</td>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function(){
+            $("table tr:even").addClass("evenRow");
+            $("table tr:odd").addClass("oddRow");
+            });
+    </script>
+    
+</body>
+</html>

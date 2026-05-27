@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Remove Table Row</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+  table{
+    border-collapse:collapse;
+    width:50%
+    }
+    td,th{
+        border:1px solid #ccc;
+        padding:8px
+        }
+    </style>
+</head>
+<body>
+  <h1>jQuery</h1>
+  <h1>PR3</h1>
+  <table id="users">
+    <thead>
+      <tr><th>ID</th><th>Name</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr id="row1"><td>1</td><td>Alice</td><td><button class="remove" data-row="#row1">Remove</button></td></tr>
+      <tr id="row2"><td>2</td><td>Bob</td><td><button class="remove" data-row="#row2">Remove</button></td></tr>
+      <tr id="row3"><td>3</td><td>Charlie</td><td><button class="remove" data-row="#row3">Remove</button></td></tr>
+    </tbody>
+  </table>
+  <script>
+    $(document).on('click', '.remove', function(){
+      var sel = $(this).data('row');
+      $(sel).remove();
+    });
+
+   
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+     body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 70%;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        .evenRow {
+            background-color: #f2f2f2;
+        }
+        .oddRow {
+            background-color: #ffffff;
+        }
+        tbody tr:hover {
+            background-color: #d1ecf1;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery</h1>
+    <h1>PR2</h1>
+    <h2>Three Box Toggle</h2>
+        <button id="moveBtn" type="button" style="margin-top: 20px; padding: 10px 16px;">Move Box</button>
+<br><br>
+
+    <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;">
+        <div id="box1" style="border: 2px dashed #666; padding: 20px; min-width: 180px; min-height: 120px; background: #f8f8f8;">
+            <strong>Box 1 (fixed)</strong>
+            <p>This box stays fixed.</p>
+        </div>
+
+        <div id="box2" style="border: 2px dashed #666; padding: 20px; min-width: 180px; min-height: 120px; background: #f8f8f8;">
+            <strong>Box 2 (fixed)</strong>
+            <p>This box also stays fixed.</p>
+        </div>
+
+        <div id="movingBox" style="border: 2px solid #007acc; padding: 20px; min-width: 180px; min-height: 120px; background: #eef7ff;">
+            <strong>Moving Box</strong>
+            <p>Click the button to move me between Box 1 and Box 2.</p>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){
+            $("table tr:even").addClass("evenRow");
+            $("table tr:odd").addClass("oddRow");
+
+            let currentBox = "box1";
+
+            $("#moveBtn").on("click", function(){
+                if (currentBox === "box1") {
+                    $("#movingBox").appendTo("#box2");
+                    currentBox = "box2";
+                } else {
+                    $("#movingBox").appendTo("#box1");
+                    currentBox = "box1";
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
